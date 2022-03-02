@@ -1,0 +1,8 @@
+let f=1 in
+    let f=true in
+    	f
+    end
+end
+
+(* => bool *)
+(* wrong answer => int *)

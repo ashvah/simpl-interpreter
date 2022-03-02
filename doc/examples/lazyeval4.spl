@@ -1,0 +1,5 @@
+let fib=rec f=>fn a=>fn b=>(stream,a,(f b (a+b))) in
+	let get=rec f=>fn s=>fn n=>if n=0 then (car s) else f (cdr s) (n-1) in
+		get (fib 0 1) 20
+	end
+end

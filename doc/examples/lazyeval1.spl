@@ -1,0 +1,3 @@
+let a= ref 0 in
+	(fn x=>fn y=>fn z=>y;!a) (a:=!a+1) (a:=!a+2) (a:=!a+3)
+end 

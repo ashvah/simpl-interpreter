@@ -1,0 +1,10 @@
+if (fst (true, false)) 
+then 
+   ((fst (1, 2)) + (snd (3, 4))) 
+else 
+   if (hd (true::(false::nil))) 
+   then 
+      (hd (tl (1::(2::(3::nil)))))
+   else
+       0
+(* ==> 5 *)

@@ -1,0 +1,20 @@
+(*let mulstream=rec f=>fn s1=>fn s2=>(stream, ((car s1) * (car s2)), (f (cdr s1) (cdr s2))) in
+	let addstream=rec f=>fn s1=>fn s2=>(stream,((car s1)+(car s2)), (f (cdr s1) (cdr s2))) in
+		let onestream=rec f=>(stream,1,f) in
+			let integerstream=rec f=>(stream,1,(addstream onestream f)) in
+				let factorial=rec f=>(stream,1,(mulstream (cdr integerstream) f)) in
+					let get=rec f=>fn s=>fn n=>if n=1 then (car s) else f (cdr s) (n-1) in
+						get factorial 10
+					end
+				end
+			end
+		end
+	end
+end*)
+(define mulstream=>rec f=>fn s1=>fn s2=>(stream, ((car s1) * (car s2)), (f (cdr s1) (cdr s2))));
+(define addstream=>rec f=>fn s1=>fn s2=>(stream,((car s1)+(car s2)), (f (cdr s1) (cdr s2))));
+(define onestream=>rec f=>(stream,1,f));
+(define integerstream=>rec f=>(stream,1,(addstream onestream f)));
+(define factorial=>rec f=>(stream,1,(mulstream (cdr integerstream) f)));
+(define get=>rec f=>fn s=>fn n=>if n=1 then (car s) else f (cdr s) (n-1));
+(get factorial 10)

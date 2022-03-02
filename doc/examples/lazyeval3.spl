@@ -1,0 +1,1 @@
+(fn x=>fn y=>if true then (force x) else (force y)) (delay (1 / 1)) (delay (1 / 0))

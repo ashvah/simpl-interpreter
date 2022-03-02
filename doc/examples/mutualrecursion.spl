@@ -1,0 +1,20 @@
+(define oddeven=>rec f=>{iseven=fn x=>if iszero x then true else (proj, f, isodd) (pred x),
+		{isodd=fn x=>if iszero x then false else (proj, f, iseven) (pred x),
+		recordnil}});
+(define multirec=>rec f=>{iszero=fn x=>if x=0 then true else if x=1 then false else if x=2 then false else (proj, f, istwo) (x-1),
+		{isone=fn x=>(proj, f,iszero) (x-1),
+		{istwo=fn x=>(proj, f,isone) (x-1),
+		recordnil}}});
+(display oddeven);
+newline;
+(display multirec);
+newline;
+(display ((proj, multirec, isone) 10));
+newline;
+(display ((proj, multirec, istwo) 10));
+newline;
+(display ((proj, multirec, iszero) 10));
+newline;
+(display ((proj, oddeven, iseven) 10));
+newline;
+((proj, oddeven, isodd) 10)

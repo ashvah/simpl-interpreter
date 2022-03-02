@@ -1,0 +1,6 @@
+fn x =>
+let g=fn y=> if x then 1 else 2 in
+	1
+end
+(*bool->int*)
+(* wrong answer tv->int*)

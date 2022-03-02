@@ -1,0 +1,1 @@
+(fn x=>fn y=>if true then x else y) (1 / 1) (1 / 0)

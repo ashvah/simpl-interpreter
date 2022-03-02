@@ -1,0 +1,10 @@
+let factorial = fn n=> 
+		let m = ref n in
+			let x = ref 1 in
+			(while (!m >1) do x := !x * !m; m := !m -1);
+			!x
+			end
+		end
+in
+	factorial 10
+end

@@ -1,0 +1,13 @@
+let map=rec m =>fn f => fn l =>
+    if l=nil
+    then nil
+    else (f (hd l))::(m f (tl l))
+in
+	let square=fn x=> (x * x) in
+		let range=rec r=>fn x=>fn y=>if x>y then nil else x::(r (succ x) y) in
+			display (map square (range 1 10));
+			newline
+		end
+	end
+end
+(* ==> list@10:(1, 4, 9, 16, 25, 36, 49, 64, 81, 100) *)

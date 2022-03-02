@@ -1,0 +1,4 @@
+(define a=>fn x=>x);
+(define b=>a 1);
+(define c=>a false);
+(if c then b else 0)

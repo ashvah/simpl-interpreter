@@ -1,0 +1,7 @@
+let g = fn x => fn y => true in
+    let sum = rec g => fn x => fn y=> if iszero x then y else (g (pred x) (y + x)) in
+    	sum 10 0
+    end
+end
+
+(* => int *)

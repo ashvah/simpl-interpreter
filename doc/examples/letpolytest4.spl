@@ -1,0 +1,9 @@
+let f0= fn x => (x,x) in
+	let f1 = fn y => f0 (f0 y) in
+		let f2 = fn y => f1 (f1 y) in
+			let f3 = fn y => f2 (f2 y) in
+				f3 (fn z => z)
+			end
+		end
+	end
+end
